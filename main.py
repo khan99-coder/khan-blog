@@ -23,6 +23,7 @@ database_uri = os.environ.get('SQLALCHEMY_DATABASE_URI')
 app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+print(app.config)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -261,5 +262,6 @@ def delete_post(post_id):
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)
+    #app.run(debug=True)
 
